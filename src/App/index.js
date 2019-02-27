@@ -1,5 +1,9 @@
 import React from 'react'
+import ErrorBoundary from '../ErrorBoundary/index'
 
-const App = () => <div>Hello!</div>
+const App = () => 
+	<ErrorBoundary>
+		<div>Hello!</div>
+	</ErrorBoundary>
 
 export default App

@@ -13,7 +13,7 @@ const ErrorMessage = () =>
 	      secure='true'
 	      alt='logo'
 	    />
-		<p>Ocorreu um erro na renderização do aplicativo</p>
+		<p>Ocorreu um erro na renderização</p>
 		<p>Tente novamente ou contate o suporte</p>
 	</div>
 

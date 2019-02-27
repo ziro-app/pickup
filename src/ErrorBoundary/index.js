@@ -6,7 +6,7 @@ export default class ErrorBoundary extends Component {
 	state = { renderError: false }
 	static getDerivedStateFromError = () => ({ renderError: true })
 	componentDidCatch = (error, info) => console.log(error, info)
-	render = () => this.state.renderError ? <ErrorMessage /> : this.props.children
+	render = () => (this.state.renderError ? <ErrorMessage /> : this.props.children)
 }
 
 ErrorBoundary.propTypes = {
