@@ -14,7 +14,9 @@ export default class PickupCreate extends Component {
 		/* dropdown data */
 		resellers: [],
 		/* user inputs */
-		pickup_code: ''
+		pickup_code: '',
+		/* error messages */
+		error_pickup_code: ''
 	}
 	/*-- methods --*/
 	cancelTokenSource = CancelToken.source()

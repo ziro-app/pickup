@@ -7,11 +7,11 @@ import Code from './Code/index'
 import { body } from './styles'
 
 const Form = ({ state, updatePickup }) => {
-	const { uiState, pickup_code } = state
+	const { uiState, pickup_code, error_pickup_code } = state
 	return (
 		<div style={body}>
 		{/*---------------------------PICKUP_CODE-------------------------*/}
-			<FormInput uiState={uiState} errorMessage='Erro!'
+			<FormInput uiState={uiState} errorMessage={error_pickup_code}
 				render={() => (
 					<Code
 						value={pickup_code}
