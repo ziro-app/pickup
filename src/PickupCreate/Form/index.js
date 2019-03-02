@@ -4,11 +4,12 @@ import PropTypes from 'prop-types'
 /* import components */
 import FormInput from './FormInput/index'
 import Code from './Code/index'
+import { body } from './styles'
 
 const Form = ({ state, updatePickup }) => {
 	const { uiState, pickup_code } = state
 	return (
-		<div>
+		<div style={body}>
 		{/*---------------------------PICKUP_CODE-------------------------*/}
 			<FormInput uiState={uiState} errorMessage='Erro!'
 				render={() => (
