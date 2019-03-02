@@ -1,12 +1,10 @@
 import React from 'react'
 import ErrorBoundary from '../ErrorBoundary/index'
-import Header from '../Header/index'
+import PickupCreate from '../PickupCreate/index'
 
 const App = () => 
 	<ErrorBoundary>
-		<Header title={'Retiradas'}>
-			<div>Hello!</div>
-		</Header>
+		<PickupCreate />
 	</ErrorBoundary>
 
 export default App
