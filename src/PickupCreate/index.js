@@ -5,6 +5,7 @@ import { CancelToken } from 'axios'
 import { initialUiState, changeUiState } from './methods/stateMachine'
 import fetchInitialData from './methods/fetchInitialData'
 import updatePickup from './methods/updatePickup'
+import submitForm from './methods/submitForm'
 import renderForm from './methods/renderForm'
 
 export default class PickupCreate extends Component {
@@ -23,6 +24,7 @@ export default class PickupCreate extends Component {
 	changeUiState = changeUiState(this)
 	fetchInitialData = fetchInitialData(this)
 	updatePickup = updatePickup(this)
+	submitForm = submitForm(this)
 	renderForm = renderForm(this)
 	/*-- lifecycle --*/
 	componentDidMount = () => this.fetchInitialData()
