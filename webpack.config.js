@@ -31,10 +31,25 @@ module.exports = (env, { mode }) => {
 		plugins: [ new HtmlWebpackPlugin({ template: './src/index.html' }) ]
 	}
 	if (mode === 'development') {
+		const { data_url } = require('./credentials')
 		config.devtool = 'cheap-module-eval-source-map'
+		config.plugins.push(
+			new webpack.DefinePlugin({
+				'process.env': {
+					DATA_SHEET_URL: JSON.stringify(data_url)
+				}
+			})
+		)
 	}
 	if (mode === 'production') {
 		config.devtool = 'cheap-module-source-map'
+		config.plugins.push(
+			new webpack.DefinePlugin({
+				'process.env': {
+					DATA_SHEET_URL: JSON.stringify(process.env.DATA_SHEET_URL)
+				}
+			})
+		)
 	}
 	return config
 }
