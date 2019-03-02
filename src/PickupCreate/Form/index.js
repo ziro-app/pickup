@@ -4,9 +4,10 @@ import PropTypes from 'prop-types'
 /* import components */
 import FormInput from './FormInput/index'
 import Code from './Code/index'
+import Submit from './Submit/index'
 import { body } from './styles'
 
-const Form = ({ state, updatePickup }) => {
+const Form = ({ state, updatePickup, submitForm }) => {
 	const { uiState, pickup_code, error_pickup_code } = state
 	return (
 		<div style={body}>
@@ -26,8 +27,15 @@ const Form = ({ state, updatePickup }) => {
 					/>
 				)}
 			/>
+		<Submit submitForm={submitForm} uiState={uiState} />
 		</div>
 	)
+}
+
+Form.propTypes = {
+	state: PropTypes.object.isRequired,
+	updatePickup: PropTypes.func.isRequired,
+	submitForm: PropTypes.func.isRequired
 }
 
 export default Form
