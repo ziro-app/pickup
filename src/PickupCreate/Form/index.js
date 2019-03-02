@@ -3,17 +3,26 @@ import React from 'react'
 import PropTypes from 'prop-types'
 /* import components */
 import FormInput from './FormInput/index'
+import Code from './Code/index'
 
-const Form = ({ state }) => {
+const Form = ({ state, updatePickup }) => {
 	const { uiState, pickup_code } = state
 	return (
 		<div>
+		{/*---------------------------PICKUP_CODE-------------------------*/}
 			<FormInput uiState={uiState} errorMessage='Erro!'
 				render={() => (
-					<input />
+					<Code
+						value={pickup_code}
+						updatePickup={updatePickup}
+					/>
 				)}
 				renderSubmitting={() => (
-					<input />
+					<input
+						type='text'
+						placeholder={pickup_code || 'Cód. Retirada'}
+						disabled={true}
+					/>
 				)}
 			/>
 		</div>
