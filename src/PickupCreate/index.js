@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { initialUiState, changeUiState } from './methods/stateMachine'
+import updatePickup from './methods/updatePickup'
 import renderForm from './methods/renderForm'
 
 export default class PickupCreate extends Component {
@@ -11,6 +12,7 @@ export default class PickupCreate extends Component {
 	}
 	/*-- methods --*/
 	changeUiState = changeUiState(this)
+	updatePickup = updatePickup(this)
 	renderForm = renderForm(this)
 	/*-- lifecycle --*/
 	render = () => this.renderForm(this.state.uiState)

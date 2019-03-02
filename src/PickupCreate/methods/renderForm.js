@@ -7,7 +7,7 @@ import ErrorOnFetch from '../../ErrorOnFetch/index'
 const renderForm = that => uiState => {
 	const componentToRender = {
 		default:
-			<Form state={that.state} />,
+			<Form state={that.state} updatePickup={that.updatePickup} />,
 		fetching:
 			<Spinner size={'8rem'} />,
 		error_fetching:

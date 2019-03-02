@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { input, inputFilled } from './styles'
 
 export default class Code extends Component {
-	handleChange = ({ target: { value } }) => this.props.updateParent(value)
+	handleChange = ({ target: { value } }) => this.props.updatePickup(value)
 	render = () => {
 		return (
 			<input
@@ -19,5 +19,5 @@ export default class Code extends Component {
 
 Code.propTypes = {
 	value: PropTypes.string.isRequired,
-	updateParent: PropTypes.func.isRequired
+	updatePickup: PropTypes.func.isRequired
 }
