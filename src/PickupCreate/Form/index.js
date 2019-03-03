@@ -27,7 +27,7 @@ const Form = ({ state, updatePickup, submitForm }) => {
 					/>
 				)}
 			/>
-		<Submit submitForm={submitForm} uiState={uiState} />
+		<Submit uiState={uiState} submitForm={submitForm} />
 		</div>
 	)
 }
