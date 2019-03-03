@@ -39,3 +39,27 @@ ul {
 input::placeholder, textarea::placeholder {
     color: rgba(48,62,77,0.3);
 }
+
+input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.DayPicker {
+    font-size: 2rem !important;
+}
+
+.DayPickerInput {
+    width: 100%;
+}
+
+.DayPicker-Day--today {
+  color: #fff !important;
+  background-color: rgba(48,62,77,0.8);
+}
+
+.DayPicker:not(.DayPicker--interactionDisabled)
+  .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+  color: #fff;
+  background-color: rgba(48,62,77,0.8) !important;
+  outline: none;
+}

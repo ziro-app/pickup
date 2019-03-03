@@ -1,13 +1,16 @@
 /* import libraries */
 import React from 'react'
 import PropTypes from 'prop-types'
+/* import utils */
+import formatDate from '../utils/formatDate'
+import { dayPickerProps } from '../utils/dayPickerProps'
 /* import components */
 import FormInput from './FormInput/index'
 import Code from './Code/index'
 import DayPickerInput from 'react-day-picker/DayPickerInput'
 import InputForDayPicker from './InputForDayPicker/index'
 import Submit from './Submit/index'
-import { body } from './styles'
+import { body, input } from './styles'
 
 const Form = ({ state, updatePickup, updateDayPicker, submitForm }) => {
 	const {
@@ -26,7 +29,7 @@ const Form = ({ state, updatePickup, updateDayPicker, submitForm }) => {
 				renderSubmitting={() => (
 					<input
 						type='text'
-						placeholder={pickup_code || 'Cód. Retirada'}
+						placeholder={pickup_code || 'Código Retirada'}
 						disabled={true}
 					/>
 				)}
