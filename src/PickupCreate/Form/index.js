@@ -15,8 +15,8 @@ import { body, input } from './styles'
 
 const Form = ({ state, updatePickup, updateDayPicker, updateDropdown, submitForm }) => {
 	const {
-		uiState, pickup_code, error_pickup_code, date, error_date, reseller, error_reseller,
-		resellers
+		uiState, pickup_code, error_pickup_code, date, error_date, supplier, error_supplier,
+		suppliers
 	} = state
 	return (
 		<div style={body}>
@@ -56,21 +56,21 @@ const Form = ({ state, updatePickup, updateDayPicker, updateDropdown, submitForm
 					/>
 				)}
 			/>
-			{/*---------------------------RESELLER-------------------------*/}
-			<FormInput uiState={uiState} errorMessage={error_reseller}
+			{/*---------------------------SUPPLIER-------------------------*/}
+			<FormInput uiState={uiState} errorMessage={error_supplier}
 				render={() => (
 					<Dropdown
-						name='reseller'
-						placeholder='Lojista'
-						options={resellers}
-						value={reseller}
+						name='supplier'
+						placeholder='Fornecedor'
+						options={suppliers}
+						value={supplier}
 						updateParent={updateDropdown}
 					/>
 				)}
 				renderSubmitting={() => (
 					<input
 						style={input}
-						placeholder={reseller}
+						placeholder={supplier}
 						disabled={true}
 					/>
 				)}
@@ -83,6 +83,8 @@ const Form = ({ state, updatePickup, updateDayPicker, updateDropdown, submitForm
 Form.propTypes = {
 	state: PropTypes.object.isRequired,
 	updatePickup: PropTypes.func.isRequired,
+	updateDayPicker: PropTypes.func.isRequired,
+	updateDropdown: PropTypes.func.isRequired,
 	submitForm: PropTypes.func.isRequired
 }
 

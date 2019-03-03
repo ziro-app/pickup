@@ -10,8 +10,8 @@ const fetchFromSheet = async (get, cancelTokenSource) => {
 	if (values.length === 0)
 		await Promise.reject('Error at fetchFromSheet. values.length === 0')
 	const codes = getOptionsCodes(values,20,21)
-	const resellers = getOptions(values,0)
-	return { codes, resellers }
+	const suppliers = getOptions(values,0)
+	return { codes, suppliers }
 }
 
 export default fetchFromSheet

@@ -16,15 +16,15 @@ export default class PickupCreate extends Component {
 		uiState: initialUiState,
 		/* dropdown data */
 		codes: [],
-		resellers: [],
+		suppliers: [],
 		/* user inputs */
 		pickup_code: '',
 		date: '',
-		reseller: '',
+		supplier: '',
 		/* error messages */
 		error_pickup_code: '',
 		error_date: '',
-		error_reseller: ''
+		error_supplier: ''
 	}
 	/*-- methods --*/
 	cancelTokenSource = CancelToken.source()
