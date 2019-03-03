@@ -1,4 +1,4 @@
-import { getOptionsCodes, getOptions } from './getOptions'
+import { getOptionsCodes, getOptionsSuppliers } from './getOptions'
 
 const fetchFromSheet = async (get, cancelTokenSource) => {
 	const { data: { values } } = await get(
@@ -10,7 +10,7 @@ const fetchFromSheet = async (get, cancelTokenSource) => {
 	if (values.length === 0)
 		await Promise.reject('Error at fetchFromSheet. values.length === 0')
 	const codes = getOptionsCodes(values,20,21)
-	const suppliers = getOptions(values,0)
+	const suppliers = getOptionsSuppliers(values,5)
 	return { codes, suppliers }
 }
 
