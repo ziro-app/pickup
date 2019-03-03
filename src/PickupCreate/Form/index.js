@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 /* import components */
 import FormInput from './FormInput/index'
 import Code from './Code/index'
+import DayPickerInput from 'react-day-picker/DayPickerInput'
+import InputForDayPicker from './InputForDayPicker/index'
 import Submit from './Submit/index'
 import { body } from './styles'
 
