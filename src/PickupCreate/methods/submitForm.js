@@ -12,7 +12,9 @@ const submitForm = that => async () => {
 			await sendToBackend(that.state)
 			that.changeUiState('SUCCESS')
 			that.setState({
-				pickup_code: ''
+				pickup_code: '',
+				date: '',
+				reseller: ''
 			})
 		} catch (error) {
 			console.log(error)
