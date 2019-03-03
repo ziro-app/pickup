@@ -9,7 +9,7 @@ export default class Code extends Component {
 			<input
 				style={this.props.value !== '' ? inputFilled : input}
 				type='text'
-				placeholder='Cód. Retirada'
+				placeholder='Código Retirada'
 				value={this.props.value.toUpperCase()}
 				onChange={this.handleChange}
 			/>

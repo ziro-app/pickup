@@ -7,4 +7,6 @@ export const
 codeIsValid = (options, input) => Boolean(options.filter( option =>
 	option[1] === input && !option[0].match(/(Em trânsito)|(Entregue)|(Cancelado)/g)).length),
 
-optionIsValid = (options, input) => Boolean(options.filter( option => option === input).length)
+optionIsValid = (options, input) => Boolean(options.filter( option => option === input).length),
+
+dateIsValid = date => new Date(date) instanceof Date && !isNaN(new Date(date))

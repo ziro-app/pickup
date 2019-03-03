@@ -28,8 +28,8 @@ const Form = ({ state, updatePickup, updateDayPicker, submitForm }) => {
 				)}
 				renderSubmitting={() => (
 					<input
-						type='text'
-						placeholder={pickup_code || 'Código Retirada'}
+						style={input}
+						placeholder={pickup_code}
 						disabled={true}
 					/>
 				)}
