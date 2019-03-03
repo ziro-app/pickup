@@ -1,4 +1,4 @@
-import { optionIsValid } from './validateFields'
+import { codeIsValid, optionIsValid } from './validateFields'
 
 const validateForm = ({
 	pickup_code,
@@ -7,7 +7,7 @@ const validateForm = ({
 }) => {
 	if (resellers) {
 		/* check if each field contains valid values */
-		const pickup_code_is_valid = optionIsValid(codes, pickup_code)
+		const pickup_code_is_valid = codeIsValid(codes, pickup_code)
 		const formIsValid = pickup_code_is_valid
 		return {
 			formIsValid,

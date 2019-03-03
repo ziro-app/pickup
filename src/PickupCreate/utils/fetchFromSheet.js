@@ -9,7 +9,7 @@ const fetchFromSheet = async (get, cancelTokenSource) => {
 		await Promise.reject('Error at fetchFromSheet. values is undefined')
 	if (values.length === 0)
 		await Promise.reject('Error at fetchFromSheet. values.length === 0')
-	const codes = getOptionsCodes(values,21)
+	const codes = getOptionsCodes(values,20,21)
 	return { codes }
 }
 
