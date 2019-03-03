@@ -11,6 +11,7 @@ const renderForm = that => uiState => {
 				state={that.state}
 				updatePickup={that.updatePickup}
 				updateDayPicker={that.updateDayPicker}
+				updataDropdown={that.updataDropdown}
 				submitForm={that.submitForm}
 			/>,
 		fetching:

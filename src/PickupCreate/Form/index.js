@@ -9,12 +9,13 @@ import FormInput from './FormInput/index'
 import Code from './Code/index'
 import DayPickerInput from 'react-day-picker/DayPickerInput'
 import InputForDayPicker from './InputForDayPicker/index'
+import Dropdown from '@ziro/dropdown'
 import Submit from './Submit/index'
 import { body, input } from './styles'
 
-const Form = ({ state, updatePickup, updateDayPicker, submitForm }) => {
+const Form = ({ state, updatePickup, updateDayPicker, updateDropdown, submitForm }) => {
 	const {
-		uiState, pickup_code, error_pickup_code, date, error_date
+		uiState, pickup_code, error_pickup_code, date, error_date, reseller, error_reseller
 	} = state
 	return (
 		<div style={body}>
@@ -50,6 +51,25 @@ const Form = ({ state, updatePickup, updateDayPicker, submitForm }) => {
 					<input
 						style={input}
 						placeholder={formatDate(date)}
+						disabled={true}
+					/>
+				)}
+			/>
+			{/*---------------------------RESELLER-------------------------*/}
+			<FormInput uiState={uiState} errorMessage={error_reseller}
+				render={() => (
+					<Dropdown
+						name='reseller'
+						placeholder='Lojista'
+						options={resellers}
+						value={reseller}
+						updateParent={updateDropdown}
+					/>
+				)}
+				renderSubmitting={() => (
+					<input
+						style={input}
+						placeholder={reseller}
 						disabled={true}
 					/>
 				)}
