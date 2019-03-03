@@ -15,7 +15,8 @@ import { body, input } from './styles'
 
 const Form = ({ state, updatePickup, updateDayPicker, updateDropdown, submitForm }) => {
 	const {
-		uiState, pickup_code, error_pickup_code, date, error_date, reseller, error_reseller
+		uiState, pickup_code, error_pickup_code, date, error_date, reseller, error_reseller,
+		resellers
 	} = state
 	return (
 		<div style={body}>
