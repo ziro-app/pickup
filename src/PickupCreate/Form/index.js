@@ -8,10 +8,12 @@ import Submit from './Submit/index'
 import { body } from './styles'
 
 const Form = ({ state, updatePickup, submitForm }) => {
-	const { uiState, pickup_code, error_pickup_code } = state
+	const {
+		uiState, pickup_code, error_pickup_code, date, error_date
+	} = state
 	return (
 		<div style={body}>
-		{/*---------------------------PICKUP_CODE-------------------------*/}
+			{/*---------------------------PICKUP_CODE-------------------------*/}
 			<FormInput uiState={uiState} errorMessage={error_pickup_code}
 				render={() => (
 					<Code
@@ -27,7 +29,27 @@ const Form = ({ state, updatePickup, submitForm }) => {
 					/>
 				)}
 			/>
-		<Submit uiState={uiState} submitForm={submitForm} />
+			{/*------------------------------DATE----------------------------*/}
+			<FormInput uiState={uiState} errorMessage={error_date}
+				render={() => (
+					<DayPickerInput
+						component={InputForDayPicker}
+						placeholder='Data Retirada'
+						value={date}
+						onDayChange={updateDayPicker()}
+						formatDate={formatDate}
+						dayPickerProps={dayPickerProps}
+					/>
+				)}
+				renderSubmitting={() => (
+					<input
+						style={input}
+						placeholder={formatDate(end_date)}
+						disabled={true}
+					/>
+				)}
+			/>
+			<Submit uiState={uiState} submitForm={submitForm} />
 		</div>
 	)
 }
