@@ -1,3 +1,5 @@
+import { getOptionsCodes } from './getOptions'
+
 const fetchFromSheet = async (get, cancelTokenSource) => {
 	const { data: { values } } = await get(
 		`${process.env.DATA_SHEET_URL}`,
@@ -7,8 +9,8 @@ const fetchFromSheet = async (get, cancelTokenSource) => {
 		await Promise.reject('Error at fetchFromSheet. values is undefined')
 	if (values.length === 0)
 		await Promise.reject('Error at fetchFromSheet. values.length === 0')
-	const resellers = values
-	return { resellers }
+	const codes = getOptionsCodes(values,21)
+	return { codes }
 }
 
 export default fetchFromSheet

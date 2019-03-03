@@ -9,8 +9,10 @@ const fetchInitialData = that => async () => {
 		if (isCancel(error))
 			console.log('Request canceled')
 		else {
+			console.log(error)
 			that.changeUiState('ERROR')
-			console.log(error.response)
+			if (error.response)
+				console.log(error.response)
 		}
 	}
 }

@@ -13,6 +13,7 @@ export default class PickupCreate extends Component {
 		/* initial ui state */
 		uiState: initialUiState,
 		/* dropdown data */
+		codes: [],
 		resellers: [],
 		/* user inputs */
 		pickup_code: '',
