@@ -9,7 +9,7 @@ import InputForDayPicker from './InputForDayPicker/index'
 import Submit from './Submit/index'
 import { body } from './styles'
 
-const Form = ({ state, updatePickup, submitForm }) => {
+const Form = ({ state, updatePickup, updateDayPicker, submitForm }) => {
 	const {
 		uiState, pickup_code, error_pickup_code, date, error_date
 	} = state
@@ -38,7 +38,7 @@ const Form = ({ state, updatePickup, submitForm }) => {
 						component={InputForDayPicker}
 						placeholder='Data Retirada'
 						value={date}
-						onDayChange={updateDayPicker()}
+						onDayChange={updateDayPicker}
 						formatDate={formatDate}
 						dayPickerProps={dayPickerProps}
 					/>
@@ -46,7 +46,7 @@ const Form = ({ state, updatePickup, submitForm }) => {
 				renderSubmitting={() => (
 					<input
 						style={input}
-						placeholder={formatDate(end_date)}
+						placeholder={formatDate(date)}
 						disabled={true}
 					/>
 				)}
