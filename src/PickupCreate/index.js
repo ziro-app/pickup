@@ -17,6 +17,7 @@ export default class PickupCreate extends Component {
 		/* dropdown data */
 		codes: [],
 		suppliers: [],
+		branches: [],
 		/* user inputs */
 		pickup_code: '',
 		date: '',
