@@ -3,7 +3,8 @@ import { post } from 'axios'
 const sendToBackend = async ({ 
 		pickup_code,
 		date,
-		supplier
+		supplier,
+		address
 	}) => {
 	const { data: message } = await Promise.resolve({ data: 'Success' })
 	if (message !== 'Success')

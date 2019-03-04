@@ -14,7 +14,8 @@ const submitForm = that => async () => {
 			that.setState({
 				pickup_code: '',
 				date: '',
-				supplier: ''
+				supplier: '',
+				address: ''
 			})
 		} catch (error) {
 			console.log(error)
