@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 /* import utils */
 import formatDate from '../utils/formatDate'
 import { dayPickerProps } from '../utils/dayPickerProps'
+import createAddressList from '../utils/createAddressList'
 /* import components */
 import FormInput from './FormInput/index'
 import Code from './Code/index'
@@ -81,7 +82,7 @@ const Form = ({ state, updatePickup, updateDayPicker, updateDropdown, submitForm
 					<Dropdown
 						name='address'
 						placeholder='Endereço'
-						options={suppliers}
+						options={createAddressList(branches, supplier)}
 						value={address}
 						updateParent={updateDropdown}
 					/>
