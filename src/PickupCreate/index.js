@@ -22,10 +22,12 @@ export default class PickupCreate extends Component {
 		pickup_code: '',
 		date: '',
 		supplier: '',
+		address: '',
 		/* error messages */
 		error_pickup_code: '',
 		error_date: '',
-		error_supplier: ''
+		error_supplier: '',
+		error_address: ''
 	}
 	/*-- methods --*/
 	cancelTokenSource = CancelToken.source()
