@@ -18,16 +18,19 @@ export default class PickupCreate extends Component {
 		codes: [],
 		suppliers: [],
 		branches: [],
+		options_bags: ['1', '2', '3', '4'],
 		/* user inputs */
 		pickup_code: '',
 		date: '',
 		supplier: '',
 		address: '',
+		bags: '',
 		/* error messages */
 		error_pickup_code: '',
 		error_date: '',
 		error_supplier: '',
-		error_address: ''
+		error_address: '',
+		error_bags: ''
 	}
 	/*-- methods --*/
 	cancelTokenSource = CancelToken.source()

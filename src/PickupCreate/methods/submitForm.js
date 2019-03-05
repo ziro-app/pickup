@@ -15,7 +15,8 @@ const submitForm = that => async () => {
 				pickup_code: '',
 				date: '',
 				supplier: '',
-				address: ''
+				address: '',
+				bags: ''
 			})
 		} catch (error) {
 			console.log(error)
