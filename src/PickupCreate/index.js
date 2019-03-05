@@ -29,6 +29,7 @@ export default class PickupCreate extends Component {
 		bags: '',
 		invoice: '',
 		comments: '',
+		reseller: 'nenhum',
 		/* error messages */
 		error_pickup_code: '',
 		error_date: '',
