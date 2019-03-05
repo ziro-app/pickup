@@ -1,7 +1,13 @@
 export const
 
-getPairs = (data, index_one, index_two) =>
-	data.map(value => [ value[index_one], value[index_two] ]).slice(1).filter(value => Boolean(value[1])),
+getResellersAndCodes = (data, index_one, index_two, index_three) => {
+	return data.map(value => {
+		const status = value[index_two]
+		if (status && !status.match(/(Em trânsito)|(Entregue)|(Cancelado)/g))
+			return [ value[index_one], status, value[index_three] ]
+		return null
+	}).slice(1).filter(value => Boolean(value)).filter(value => Boolean(value[2]))
+},
 
 getSuppliers = (data, index) =>
 	data.map(value => value[index]).slice(2).filter(value => Boolean(value[0])),

@@ -1,4 +1,4 @@
-import { getPairs, getSuppliers, getBranches } from './getOptions'
+import { getResellersAndCodes, getSuppliers, getBranches } from './getOptions'
 
 const fetchFromSheet = async (get, cancelTokenSource) => {
 	const { data: { values } } = await get(
@@ -9,10 +9,11 @@ const fetchFromSheet = async (get, cancelTokenSource) => {
 		await Promise.reject('Error at fetchFromSheet. values is undefined')
 	if (values.length === 0)
 		await Promise.reject('Error at fetchFromSheet. values.length === 0')
-	const codes = getPairs(values,20,21)
+	const resellersAndCodes = getResellersAndCodes(values,10,20,21)
+	const codes = resellersAndCodes.map(value => value[2])
 	const suppliers = getSuppliers(values,5)
 	const branches = getBranches(values,22)
-	const resellers = getPairs(values,10,21)
+	const resellers = resellersAndCodes.map(value => [ value[0], value[2] ])
 	return { codes, suppliers, branches, resellers }
 }
 
