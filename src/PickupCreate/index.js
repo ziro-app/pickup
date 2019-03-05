@@ -4,7 +4,7 @@ import { CancelToken } from 'axios'
 /* import methods */
 import { initialUiState, changeUiState } from './methods/stateMachine'
 import fetchInitialData from './methods/fetchInitialData'
-import updatePickup from './methods/updatePickup'
+import updateTextInput from './methods/updateTextInput'
 import updateDayPicker from './methods/updateDayPicker'
 import updateDropdown from './methods/updateDropdown'
 import submitForm from './methods/submitForm'
@@ -40,7 +40,7 @@ export default class PickupCreate extends Component {
 	cancelTokenSource = CancelToken.source()
 	changeUiState = changeUiState(this)
 	fetchInitialData = fetchInitialData(this)
-	updatePickup = updatePickup(this)
+	updateTextInput = updateTextInput(this)
 	updateDayPicker = updateDayPicker(this)
 	updateDropdown = updateDropdown(this)
 	submitForm = submitForm(this)

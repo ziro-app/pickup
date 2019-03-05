@@ -14,7 +14,7 @@ import Dropdown from '@ziro/dropdown'
 import Submit from './Submit/index'
 import { body, input } from './styles'
 
-const Form = ({ state, updatePickup, updateDayPicker, updateDropdown, submitForm }) => {
+const Form = ({ state, updateTextInput, updateDayPicker, updateDropdown, submitForm }) => {
 	const {
 		uiState, pickup_code, error_pickup_code, date, error_date, supplier, error_supplier,
 		suppliers, address, error_address, branches, bags, error_bags, options_bags, invoice,
@@ -28,7 +28,7 @@ const Form = ({ state, updatePickup, updateDayPicker, updateDropdown, submitForm
 					<TextInput
 						placeholder={'Código Retirada'}
 						value={pickup_code}
-						updateParent={updatePickup}
+						updateParent={updateTextInput('pickup_code')}
 					/>
 				)}
 				renderSubmitting={() => (
@@ -141,7 +141,7 @@ const Form = ({ state, updatePickup, updateDayPicker, updateDropdown, submitForm
 					<TextInput
 						placeholder={'Observação'}
 						value={comments}
-						updateParent={updatePickup}
+						updateParent={updateTextInput('comments')}
 					/>
 				)}
 				renderSubmitting={() => (
@@ -159,7 +159,7 @@ const Form = ({ state, updatePickup, updateDayPicker, updateDropdown, submitForm
 
 Form.propTypes = {
 	state: PropTypes.object.isRequired,
-	updatePickup: PropTypes.func.isRequired,
+	updateTextInput: PropTypes.func.isRequired,
 	updateDayPicker: PropTypes.func.isRequired,
 	updateDropdown: PropTypes.func.isRequired,
 	submitForm: PropTypes.func.isRequired

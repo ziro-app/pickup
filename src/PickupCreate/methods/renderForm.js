@@ -9,7 +9,7 @@ const renderForm = that => uiState => {
 		default:
 			<Form
 				state={that.state}
-				updatePickup={that.updatePickup}
+				updateTextInput={that.updateTextInput}
 				updateDayPicker={that.updateDayPicker}
 				updateDropdown={that.updateDropdown}
 				submitForm={that.submitForm}
