@@ -7,7 +7,7 @@ import { dayPickerProps } from '../utils/dayPickerProps'
 import createAddressList from '../utils/createAddressList'
 /* import components */
 import FormInput from './FormInput/index'
-import Code from './Code/index'
+import TextInput from './TextInput/index'
 import DayPickerInput from 'react-day-picker/DayPickerInput'
 import InputForDayPicker from './InputForDayPicker/index'
 import Dropdown from '@ziro/dropdown'
@@ -18,16 +18,17 @@ const Form = ({ state, updatePickup, updateDayPicker, updateDropdown, submitForm
 	const {
 		uiState, pickup_code, error_pickup_code, date, error_date, supplier, error_supplier,
 		suppliers, address, error_address, branches, bags, error_bags, options_bags, invoice,
-		error_invoice, options_invoice
+		error_invoice, options_invoice, comments
 	} = state
 	return (
 		<div style={body}>
 			{/*---------------------------PICKUP_CODE-------------------------*/}
 			<FormInput uiState={uiState} errorMessage={error_pickup_code}
 				render={() => (
-					<Code
+					<TextInput
+						placeholder={'Código Retirada'}
 						value={pickup_code}
-						updatePickup={updatePickup}
+						updateParent={updatePickup}
 					/>
 				)}
 				renderSubmitting={() => (
@@ -130,6 +131,23 @@ const Form = ({ state, updatePickup, updateDayPicker, updateDropdown, submitForm
 					<input
 						style={input}
 						placeholder={invoice}
+						disabled={true}
+					/>
+				)}
+			/>
+			{/*---------------------------COMMENTS-------------------------*/}
+			<FormInput uiState={uiState} errorMessage={''}
+				render={() => (
+					<TextInput
+						placeholder={'Observação'}
+						value={comments}
+						updateParent={updatePickup}
+					/>
+				)}
+				renderSubmitting={() => (
+					<input
+						style={input}
+						placeholder={comments}
 						disabled={true}
 					/>
 				)}
