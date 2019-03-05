@@ -20,6 +20,7 @@ export default class PickupCreate extends Component {
 		branches: [],
 		options_bags: ['1', '2', '3', '4'],
 		options_invoice: ['Sim', 'Não'],
+		resellers: [],
 		/* user inputs */
 		pickup_code: '',
 		date: '',

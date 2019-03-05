@@ -18,7 +18,7 @@ const Form = ({ state, updateTextInput, updateDayPicker, updateDropdown, submitF
 	const {
 		uiState, pickup_code, error_pickup_code, date, error_date, supplier, error_supplier,
 		suppliers, address, error_address, branches, bags, error_bags, options_bags, invoice,
-		error_invoice, options_invoice, comments
+		error_invoice, options_invoice, comments, resellers
 	} = state
 	return (
 		<div style={body}>
