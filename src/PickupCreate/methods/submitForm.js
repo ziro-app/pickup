@@ -17,7 +17,8 @@ const submitForm = that => async () => {
 				supplier: '',
 				address: '',
 				bags: '',
-				invoice: ''
+				invoice: '',
+				comments: ''
 			})
 		} catch (error) {
 			console.log(error)

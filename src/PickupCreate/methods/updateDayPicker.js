@@ -1,12 +1,9 @@
 const updateDayPicker = that => date => {
-	if (date) {
+	if (date)
 		that.setState({ date: new Date(new Date(date).setHours(0,0,0)) })
-		that.changeUiState('INPUT')
-	}
-	else {
+	else
 		that.setState({ date: '' })
-		that.changeUiState('INPUT')
-	}
+	that.changeUiState('INPUT')
 }
 
 export default updateDayPicker

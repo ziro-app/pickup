@@ -147,7 +147,7 @@ const Form = ({ state, updateTextInput, updateDayPicker, updateDropdown, submitF
 				renderSubmitting={() => (
 					<input
 						style={input}
-						placeholder={comments}
+						placeholder={comments || 'Observação'}
 						disabled={true}
 					/>
 				)}
