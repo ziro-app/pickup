@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import formatDate from '../utils/formatDate'
 import { dayPickerProps } from '../utils/dayPickerProps'
 import createAddressList from '../utils/createAddressList'
+import findReseller from '../utils/findReseller'
 /* import components */
 import InputWrapper from './InputWrapper/index'
 import TextInput from './TextInput/index'
@@ -22,6 +23,7 @@ const Form = ({ state, updateTextInput, updateDayPicker, updateDropdown, submitF
 	} = state
 	return (
 		<div style={body}>
+			<div>Lojista: {findReseller(resellers, pickup_code)}</div>
 			{/*---------------------------PICKUP_CODE-------------------------*/}
 			<InputWrapper uiState={uiState} errorMessage={error_pickup_code}
 				render={() => (
