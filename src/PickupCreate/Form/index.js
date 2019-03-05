@@ -17,7 +17,8 @@ import { body, input } from './styles'
 const Form = ({ state, updatePickup, updateDayPicker, updateDropdown, submitForm }) => {
 	const {
 		uiState, pickup_code, error_pickup_code, date, error_date, supplier, error_supplier,
-		suppliers, address, error_address, branches, bags, error_bags, options_bags
+		suppliers, address, error_address, branches, bags, error_bags, options_bags, invoice,
+		error_invoice, options_invoice
 	} = state
 	return (
 		<div style={body}>
@@ -110,6 +111,25 @@ const Form = ({ state, updatePickup, updateDayPicker, updateDropdown, submitForm
 					<input
 						style={input}
 						placeholder={bags}
+						disabled={true}
+					/>
+				)}
+			/>
+			{/*---------------------------INVOICE-------------------------*/}
+			<FormInput uiState={uiState} errorMessage={error_invoice}
+				render={() => (
+					<Dropdown
+						name='invoice'
+						placeholder='Retirar nota fiscal?'
+						options={options_invoice}
+						value={invoice}
+						updateParent={updateDropdown}
+					/>
+				)}
+				renderSubmitting={() => (
+					<input
+						style={input}
+						placeholder={invoice}
 						disabled={true}
 					/>
 				)}

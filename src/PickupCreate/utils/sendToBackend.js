@@ -5,7 +5,8 @@ const sendToBackend = async ({
 		date,
 		supplier,
 		address,
-		bags
+		bags,
+		invoice
 	}) => {
 	const { data: message } = await Promise.resolve({ data: 'Success' })
 	if (message !== 'Success')
