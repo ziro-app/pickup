@@ -6,7 +6,7 @@ import formatDate from '../utils/formatDate'
 import { dayPickerProps } from '../utils/dayPickerProps'
 import createAddressList from '../utils/createAddressList'
 /* import components */
-import FormInput from './FormInput/index'
+import InputWrapper from './InputWrapper/index'
 import TextInput from './TextInput/index'
 import DayPickerInput from 'react-day-picker/DayPickerInput'
 import InputForDayPicker from './InputForDayPicker/index'
@@ -23,7 +23,7 @@ const Form = ({ state, updateTextInput, updateDayPicker, updateDropdown, submitF
 	return (
 		<div style={body}>
 			{/*---------------------------PICKUP_CODE-------------------------*/}
-			<FormInput uiState={uiState} errorMessage={error_pickup_code}
+			<InputWrapper uiState={uiState} errorMessage={error_pickup_code}
 				render={() => (
 					<TextInput
 						placeholder={'Código Retirada'}
@@ -40,7 +40,7 @@ const Form = ({ state, updateTextInput, updateDayPicker, updateDropdown, submitF
 				)}
 			/>
 			{/*------------------------------DATE----------------------------*/}
-			<FormInput uiState={uiState} errorMessage={error_date}
+			<InputWrapper uiState={uiState} errorMessage={error_date}
 				render={() => (
 					<DayPickerInput
 						component={InputForDayPicker}
@@ -60,7 +60,7 @@ const Form = ({ state, updateTextInput, updateDayPicker, updateDropdown, submitF
 				)}
 			/>
 			{/*---------------------------SUPPLIER-------------------------*/}
-			<FormInput uiState={uiState} errorMessage={error_supplier}
+			<InputWrapper uiState={uiState} errorMessage={error_supplier}
 				render={() => (
 					<Dropdown
 						name='supplier'
@@ -79,7 +79,7 @@ const Form = ({ state, updateTextInput, updateDayPicker, updateDropdown, submitF
 				)}
 			/>
 			{/*---------------------------ADDRESS-------------------------*/}
-			<FormInput uiState={uiState} errorMessage={error_address}
+			<InputWrapper uiState={uiState} errorMessage={error_address}
 				render={() => (
 					<Dropdown
 						name='address'
@@ -98,7 +98,7 @@ const Form = ({ state, updateTextInput, updateDayPicker, updateDropdown, submitF
 				)}
 			/>
 			{/*---------------------------BAGS-------------------------*/}
-			<FormInput uiState={uiState} errorMessage={error_bags}
+			<InputWrapper uiState={uiState} errorMessage={error_bags}
 				render={() => (
 					<Dropdown
 						name='bags'
@@ -117,7 +117,7 @@ const Form = ({ state, updateTextInput, updateDayPicker, updateDropdown, submitF
 				)}
 			/>
 			{/*---------------------------INVOICE-------------------------*/}
-			<FormInput uiState={uiState} errorMessage={error_invoice}
+			<InputWrapper uiState={uiState} errorMessage={error_invoice}
 				render={() => (
 					<Dropdown
 						name='invoice'
@@ -136,7 +136,7 @@ const Form = ({ state, updateTextInput, updateDayPicker, updateDropdown, submitF
 				)}
 			/>
 			{/*---------------------------COMMENTS-------------------------*/}
-			<FormInput uiState={uiState} errorMessage={''}
+			<InputWrapper uiState={uiState} errorMessage={''}
 				render={() => (
 					<TextInput
 						placeholder={'Observação'}

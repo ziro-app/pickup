@@ -19,5 +19,6 @@ export default class TextInput extends Component {
 
 TextInput.propTypes = {
 	value: PropTypes.string.isRequired,
-	updateParent: PropTypes.func.isRequired
+	updateParent: PropTypes.func.isRequired,
+	placeholder: PropTypes.string.isRequired
 }
