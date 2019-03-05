@@ -12,7 +12,7 @@ import DayPickerInput from 'react-day-picker/DayPickerInput'
 import InputForDayPicker from './InputForDayPicker/index'
 import Dropdown from '@ziro/dropdown'
 import Submit from './Submit/index'
-import { body, input } from './styles'
+import { body, input, subtitle, name } from './styles'
 
 const Form = ({ state, updateTextInput, updateDayPicker, updateDropdown, submitForm }) => {
 	const {
@@ -22,7 +22,7 @@ const Form = ({ state, updateTextInput, updateDayPicker, updateDropdown, submitF
 	} = state
 	return (
 		<div style={body}>
-			<div>Lojista: {reseller}</div>
+			<div style={subtitle}>Lojista: <span style={name}>{reseller}</span></div>
 			{/*---------------------------PICKUP_CODE-------------------------*/}
 			<InputWrapper uiState={uiState} errorMessage={error_pickup_code}
 				render={() => (

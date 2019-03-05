@@ -20,4 +20,16 @@ input = {
 	textIndent: '25px',
 	color: 'rgba(48,62,77,0.8)',
 	fontWeight: '700'
+},
+
+subtitle = {
+	fontSize: '1.5rem',
+	fontWeight: '600',
+	textAlign: 'center',
+	textTransform: 'uppercase',
+	color: 'rgba(48,62,77,0.8)'
+},
+
+name = {
+	fontWeight: '400'
 }
