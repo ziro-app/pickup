@@ -1,4 +1,4 @@
-import { codeIsValid, dateIsValid, optionIsValid } from './validateFields'
+import { optionIsValid, dateIsValid } from './validateFields'
 import createAddressList from './createAddressList'
 
 const validateForm = ({
@@ -15,7 +15,7 @@ const validateForm = ({
 	options_invoice
 }) => {
 	if (codes && suppliers && branches && options_bags && options_invoice) {
-		const pickup_code_is_valid = codeIsValid(codes, pickup_code)
+		const pickup_code_is_valid = optionIsValid(codes, pickup_code)
 		const date_is_valid = dateIsValid(date)
 		const supplier_is_valid = optionIsValid(suppliers, supplier)
 		const address_is_valid = optionIsValid(createAddressList(branches, supplier), address)
