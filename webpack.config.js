@@ -45,6 +45,15 @@ module.exports = (env, { mode }) => {
 	if (mode === 'production') {
 		config.devtool = 'cheap-module-source-map'
 		config.plugins.push(
+			new WebpackPwaManifest({
+				name: 'Ziro Retiradas',
+				short_name: 'Retiradas',
+				start_url: '/',
+				background_color: '#FFF',
+				theme_color: '#FFF',
+				display: 'standalone',
+				icons: [{ src: './logo.png', sizes: [96, 128, 192, 256, 384, 512] }]
+			}),
 			new webpack.DefinePlugin({
 				'process.env': {
 					DATA_SHEET_URL: JSON.stringify(process.env.DATA_SHEET_URL),
