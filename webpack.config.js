@@ -1,4 +1,6 @@
 const WebpackPwaManifest = require('webpack-pwa-manifest')
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 
@@ -55,6 +57,8 @@ module.exports = (env, { mode }) => {
 				display: 'standalone',
 				icons: [{ src: './logo.png', sizes: [96, 128, 192, 256, 384, 512] }]
 			}),
+			new LodashModuleReplacementPlugin(),
+			new CompressionPlugin(),
 			new webpack.DefinePlugin({
 				'process.env': {
 					DATA_SHEET_URL: JSON.stringify(process.env.DATA_SHEET_URL),
