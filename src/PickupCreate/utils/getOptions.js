@@ -1,10 +1,18 @@
+import stringToDate from './stringToDate'
+
 export const
 
-getResellersAndCodes = (data, index_one, index_two, index_three) => {
+getResellersAndCodes = (data, index_zero, index_one, index_two, index_three) => {
 	return data.map(value => {
+		const start_date = value[index_zero]
+		const reseller = value[index_one]
 		const status = value[index_two]
-		if (status && !status.match(/(Em trânsito)|(Entregue)|(Cancelado)/g))
-			return [ value[index_one], status, value[index_three] ]
+		const code = value[index_three]
+		const validCode = status
+			&& !status.match(/(Em trânsito)|(Entregue)|(Cancelado)/g)
+			&& stringToDate(start_date) <= new Date()
+		if (validCode)
+			return [ reseller, status, code ]
 		return null
 	}).slice(1).filter(value => Boolean(value)).filter(value => Boolean(value[2]))
 },
