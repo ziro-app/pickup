@@ -30,7 +30,7 @@ getBranches = (data, index) => {
 			value[index + 8] ? `${value[index + 8]} — ${value[index + 9]}` : null,
 			value[index + 10] ? `${value[index + 10]} — ${value[index + 11]}` : null
 		]
-		const branches = rawList.filter(value => Boolean(value))
+		const branches = [...rawList.filter(value => Boolean(value)), 'Outro']
 		if (supplier)
 			return { supplier, branches }
 		return null
