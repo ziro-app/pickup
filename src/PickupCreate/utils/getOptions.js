@@ -18,7 +18,7 @@ getResellersAndCodes = (data, index_zero, index_one, index_two, index_three) => 
 },
 
 getSuppliers = (data, index) =>
-	data.map(value => value[index]).slice(2).filter(value => Boolean(value[0])),
+	data.map(value => value[index]).slice(3).filter(value => Boolean(value[0])),
 
 getBranches = (data, index) => {
 	return data.map(value => {
