@@ -12,7 +12,7 @@ const fetchFromSheet = async (get, cancelTokenSource) => {
 	const resellersAndCodes = getResellersAndCodes(values,8,10,20,21)
 	const codes = resellersAndCodes.map(value => value[2])
 	const suppliers = ['Pertence do cliente', ...getSuppliers(values,5)]
-	const branches = getBranches(values,22)
+	const branches = [{ supplier: 'Pertence do cliente', branches: ['Ziro'] }, ...getBranches(values,22)]
 	const resellers = resellersAndCodes.map(value => [ value[0], value[2] ])
 	return { codes, suppliers, branches, resellers }
 }
