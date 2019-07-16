@@ -28,7 +28,8 @@ getBranches = (data, index) => {
 			value[index + 4] ? `${value[index + 4]} — ${value[index + 5]}` : null,
 			value[index + 6] ? `${value[index + 6]} — ${value[index + 7]}` : null,
 			value[index + 8] ? `${value[index + 8]} — ${value[index + 9]}` : null,
-			value[index + 10] ? `${value[index + 10]} — ${value[index + 11]}` : null
+			value[index + 10] ? `${value[index + 10]} — ${value[index + 11]}` : null,
+			value[index + 12] ? `${value[index + 12]} — ${value[index + 13]}` : null
 		]
 		const branches = [...rawList.filter(value => Boolean(value)), 'Outro']
 		if (supplier)
