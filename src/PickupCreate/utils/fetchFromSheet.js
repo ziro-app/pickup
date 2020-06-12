@@ -3,22 +3,12 @@ import axios from 'axios'
 
 const fetchFromSheet = async (get, cancelTokenSource) => {
 	const configSheet = {
-		method: 'POST',
-		url: process.env.SHEET_URL,
-		data: {
-			"apiResource": "values",
-			"apiMethod": "batchGet",
-			"spreadsheetId": process.env.SHEET_ID,
-			"ranges": ["Boletos Recentes!A2:A"]
-		},
-		headers: {
-			'Authorization': process.env.SHEET_TOKEN,
-			'Content-Type': 'application/json'
-		}
+		method: 'GET',
+		url: process.env.SHEET_URL_CNPJ
 	}
 	try {
 		const arrayBoletos = await axios(configSheet)
-		const resultBoletos = arrayBoletos.data.valueRanges[0].values.flat()
+		const resultBoletos = arrayBoletos.data.values.flat()
 		const { data: { values } } = await get(
 			`${process.env.DATA_SHEET_URL}`,
 			{ cancelToken: cancelTokenSource.token }
