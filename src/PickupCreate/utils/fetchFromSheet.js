@@ -4,15 +4,15 @@ import axios from 'axios'
 const fetchFromSheet = async (get, cancelTokenSource) => {
 	const configSheet = {
 		method: 'POST',
-		url: 'https://sheets.ziro.app/.netlify/functions/api',
+		url: process.env.SHEET_URL,
 		data: {
 			"apiResource": "values",
 			"apiMethod": "batchGet",
-			"spreadsheetId": "1pUul2FOeqxl1xaNXDPmHYdqCKWzxoZ54n-7lvTcIzhE",
+			"spreadsheetId": process.env.SHEET_ID,
 			"ranges": ["Boletos Recentes!A2:A"]
 		},
 		headers: {
-			'Authorization': 'Basic emlybzo5YzY2MjQ1NDEzNWFkMWZhZDViZGM0MmUzY2JjM2NjY2IwYTBlZDZjOGE2YTIxYjY5ZDY2NTdiZGE0NjkwNmEwNjhmMTlhMWE4YWRhN2Y5MjNiNTc4NDg2M2U2N2RjM2Y=',
+			'Authorization': process.env.SHEET_TOKEN,
 			'Content-Type': 'application/json'
 		}
 	}

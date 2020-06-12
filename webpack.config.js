@@ -34,13 +34,16 @@ module.exports = (env, { mode }) => {
 		plugins: [ new HtmlWebpackPlugin({ template: './src/index.html' }) ]
 	}
 	if (mode === 'development') {
-		const { data_url, api_url } = require('./credentials')
+		const { data_url, api_url, sheet_url, sheet_id, sheet_token} = require('./credentials')
 		config.devtool = 'cheap-module-eval-source-map'
 		config.plugins.push(
 			new webpack.DefinePlugin({
 				'process.env': {
 					DATA_SHEET_URL: JSON.stringify(data_url),
-					API_URL: JSON.stringify(api_url)
+					API_URL: JSON.stringify(api_url),
+					SHEET_URL: JSON.stringify(sheet_url),
+					SHEET_ID: JSON.stringify(sheet_id),
+					SHEET_TOKEN: JSON.stringify(sheet_token)
 				}
 			})
 		)
@@ -62,7 +65,10 @@ module.exports = (env, { mode }) => {
 			new webpack.DefinePlugin({
 				'process.env': {
 					DATA_SHEET_URL: JSON.stringify(process.env.DATA_SHEET_URL),
-					API_URL: JSON.stringify(process.env.API_URL)
+					API_URL: JSON.stringify(process.env.API_URL),
+					SHEET_URL: JSON.stringify(process.env.SHEET_URL),
+					SHEET_ID: JSON.stringify(process.env.SHEET_ID),
+					SHEET_TOKEN: JSON.stringify(process.env.SHEET_TOKEN)
 				}
 			})
 		)
