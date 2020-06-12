@@ -17,8 +17,8 @@ import { body, input, subtitle, name } from './styles'
 const Form = ({ state, updateTextInput, updateDayPicker, updateDropdown, submitForm }) => {
 	const {
 		uiState, pickup_code, error_pickup_code, date, error_date, supplier, error_supplier,
-		suppliers, address, error_address, branches, bags, error_bags, options_bags, invoice,
-		error_invoice, options_invoice, comments, reseller
+		suppliers,boletos, address, error_address, branches, bags, error_bags, options_bags, invoice,
+		error_invoice, options_invoice, comments, reseller, boleto, error_boleto
 	} = state
 	return (
 		<div style={body}>
@@ -36,6 +36,25 @@ const Form = ({ state, updateTextInput, updateDayPicker, updateDropdown, submitF
 					<input
 						style={input}
 						placeholder={pickup_code}
+						disabled={true}
+					/>
+				)}
+			/>
+			{/*---------------------------BOLETO-------------------------*/}
+			<InputWrapper uiState={uiState} errorMessage={error_boleto}
+				render={() => (
+					<Dropdown
+						name='boleto'
+						placeholder='Boleto'
+						options={boletos}
+						value={boleto}
+						updateParent={updateDropdown}
+					/>
+				)}
+				renderSubmitting={() => (
+					<input
+						style={input}
+						placeholder={boleto}
 						disabled={true}
 					/>
 				)}
