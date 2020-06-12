@@ -38,7 +38,7 @@
   "dependencies": {
     "@babel/runtime": "^7.3.4",
     "@ziro/dropdown": "^1.0.27",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "cloudinary-react": "^1.1.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
