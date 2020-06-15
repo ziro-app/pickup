@@ -17,14 +17,12 @@ export default class PickupCreate extends Component {
 		/* dropdown data */
 		codes: [],
 		suppliers: [],
-		boletos: [],
 		branches: [],
 		options_bags: ['1', '2', '3', '4'],
 		options_invoice: ['Sim', 'Não'],
 		resellers: [],
 		/* user inputs */
 		pickup_code: '',
-		boleto: '',
 		date: '',
 		supplier: '',
 		address: '',
@@ -34,7 +32,6 @@ export default class PickupCreate extends Component {
 		reseller: 'nenhum',
 		/* error messages */
 		error_pickup_code: '',
-		error_boleto: '',
 		error_date: '',
 		error_supplier: '',
 		error_address: '',

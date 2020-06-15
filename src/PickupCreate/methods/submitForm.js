@@ -19,7 +19,6 @@ const submitForm = that => async () => {
 				bags: '',
 				invoice: '',
 				comments: '',
-				boleto: '',
 				reseller: 'nenhum'
 			})
 		} catch (error) {
